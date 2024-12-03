@@ -1,12 +1,9 @@
 ouster_description
 ===================
 
-This package is forked from https://github.com/wilselby/ouster_example, which is itself a fork of
-https://github.com/ouster-lidar/ouster_example
+This package is forked from https://github.com/clearpathrobotics/ouster_description.git.
 
-In order to reduce reliance on third-party components in deployed robots, I've stripped out everything from
-Wil Selby's fork except the Gazebo plugins and description package.  This should allow adding the OS-1 lidar
-to be added to Clearpath robots, while still using the manufacturer's ROS driver in an unmodified state.
+In order to use this description for integrating OS1-128 with the prius, I have included an additional urdf file for this sensor. For the rest, this package is exactly the same as the package from clearpathrobotics.
 
 Example use
 ------------
@@ -19,8 +16,8 @@ add the lidar to a Jackal's front mount:
 
     <?xml version="1.0"?>
     <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-      <xacro:include filename="$(find ouster_description)/urdf/OS1-64.urdf.xacro" />
-      <xacro:OS1-64 parent="front_mount">
+      <xacro:include filename="$(find ouster_description)/urdf/OS1-128.urdf.xacro" />
+      <xacro:OS1-128 parent="base_link">
         <origin xyz="0 0 0" rpy="0 0 0" />
-      </xacro:OS1-64>
+      </xacro:OS1-128>
     </robot>
