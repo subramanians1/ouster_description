@@ -1,7 +1,7 @@
 
 build/
 devel/
-logs/
+log/
 install/
 *.bag
 doc/
